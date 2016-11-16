@@ -19,7 +19,7 @@ namespace Raute
 
             if (gerade)
             {
-                for (int zeilen = 1, leer = größe, zeichen = 1; zeilen <= größe; zeilen++)
+                for (int zeilen = 1, leer = größe, zeichen = 2; zeilen <= größe; zeilen++)
                 {
                     if (zeilen < größe / 2)
                     {
