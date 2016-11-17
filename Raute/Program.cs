@@ -19,40 +19,42 @@ namespace Raute
 
             if (gerade)
             {
-                for (int zeilen = 1, leer = größe, zeichen = 2; zeilen <= größe; zeilen++)
+                for (int zeilen = 0, leer = größe, zeichen = 2; zeilen < größe; zeilen++)
                 {
                     if (zeilen < größe / 2)
                     {
-                        Console.WriteLine(new string(' ', leer--) + new string('X', zeichen));
-                        zeichen += 2;
-                    }
-                    else if (zeilen == größe / 2)
-                    {
                         Console.WriteLine(new string(' ', leer) + new string('X', zeichen));
+                        leer--;
+                        zeichen += 2;
                     }
                     else
                     {
-                        Console.WriteLine(new string(' ', leer++) + new string('X', zeichen));
+                        leer++;
                         zeichen -= 2;
+                        Console.WriteLine(new string(' ', leer) + new string('X', zeichen));
                     }
                 }
             }
             else
             {
-                for (int zeilen = 1, leer = größe, zeichen = 1; zeilen <= größe; zeilen++)
+                for (int zeilen = 0, leer = größe, zeichen = 1; zeilen < größe; zeilen++)
                 {
-                    if (zeilen <= größe / 2)
+                    if (zeilen < größe / 2)
                     {
-                        Console.WriteLine(new string(' ', leer--) + new string('X', zeichen));
+                        Console.WriteLine(new string(' ', leer) + new string('X', zeichen));
+                        leer--;
                         zeichen += 2;
                     }
                     else
                     {
-                        Console.WriteLine(new string(' ', leer++) + new string('X', zeichen));
+                        Console.WriteLine(new string(' ', leer) + new string('X', zeichen));
+                        leer++;
                         zeichen -= 2;
                     }
                 }
             }
+
+
 
             Console.WriteLine();
             Console.Read();
